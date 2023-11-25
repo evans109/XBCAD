@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/entries"
+        android:title="entries"
+        android:icon="@drawable/baseline_calendar_month_24" />
+    <item
+        android:id="@+id/main"
+        android:title="main"
+        android:icon="@drawable/baseline_list_24" />
+</menu>

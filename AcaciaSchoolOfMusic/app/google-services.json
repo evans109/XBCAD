@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "201557063204",
+    "project_id": "acacia-school-of-music",
+    "storage_bucket": "acacia-school-of-music.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201557063204:android:66b9e5aa9ce87fdacc0ab1",
+        "android_client_info": {
+          "package_name": "com.evans.st10082027.acaciaschoolofmusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIV15xhZLJD8QmxRS_Ir1cveV-1VzILbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

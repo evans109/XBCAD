@@ -1,0 +1,38 @@
+<!-- res/layout/fragment_teacher.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Calendar Grid View -->
+    <GridView
+        android:id="@+id/calendarGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:columnWidth="40dp"
+        android:numColumns="7"
+        android:gravity="center"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:stretchMode="columnWidth"
+        android:background="#eeeeee"/>
+
+    <com.google.android.material.internal.FlowLayout
+        android:id="@+id/timeSlotsFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#eeeeee"/>
+
+    <!-- Save Availability Button -->
+    <Button
+        android:id="@+id/saveAvailabilityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Save Availability"/>
+</LinearLayout>

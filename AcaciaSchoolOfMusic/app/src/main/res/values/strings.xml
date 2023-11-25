@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Acacia School Of Music</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="exitbutton">exitbutton</string>
+    <string name="register">register</string>
+    <string name="acacia_s_location">Acacia\'s location</string>
+    <string name="my_location">My location</string>
+    <string name="send_request">Send Request</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="profile">Profile</string>
+    <string name="delete_profile">delete profile</string>
+    <string name="i_m_a_teacher">I\'m a teacher</string>
+    <string name="instrument">Instrument</string>
+    <string name="selected_days">Selected Days</string>
+    <string name="selected_times">Selected Times</string>
+    <string name="address">Address</string>
+    <string name="confirmation_status">Confirmation Status</string>
+    <string name="delete">Delete</string>
+    <string name="confirm">Confirm</string>
+    <string name="deny">Deny</string>
+</resources>

@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/guitarButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/guitar_1"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/pianoButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/piano_1"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/drumsButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/drum_1"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/calendarGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonsContainer"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:numColumns="7"
+        android:padding="5dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        android:visibility="gone" />
+
+    <com.google.android.material.internal.FlowLayout
+        android:id="@+id/timeSlotsFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarGridView"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#eeeeee" >
+
+    </com.google.android.material.internal.FlowLayout>
+
+    <RadioButton
+        android:id="@+id/placeRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeSlotsFlowLayout"
+        android:visibility="gone"
+        android:text="@string/acacia_s_location"/>
+
+    <RadioButton
+        android:id="@+id/addressRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeSlotsFlowLayout"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/placeRadioButton"
+        android:visibility="gone"
+        android:text="@string/my_location"/>
+
+    <EditText
+        android:id="@+id/addressTextView"
+        android:layout_width="239dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/placeRadioButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/enter_your_address"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressTextView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/send_request"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
