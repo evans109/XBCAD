@@ -22,4 +22,10 @@
     <string name="delete">Delete</string>
     <string name="confirm">Confirm</string>
     <string name="deny">Deny</string>
+    <string name="help">Help</string>
+    <string name="contact_the_developer_pillayevan27_gmail_com">Contact the Developer: Pillayevan27@gmail.com</string>
+    <string name="contact_the_owner_cheslinfortes9_gmail_com">Contact the Owner: Cheslinfortes9@gmail.com</string>
+    <string name="price">Price</string>
+    <string name="logout">Logout</string>
+    <string name="view_profile">View Profile</string>
 </resources>

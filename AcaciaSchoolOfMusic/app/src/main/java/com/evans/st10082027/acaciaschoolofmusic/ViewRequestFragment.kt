@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,7 @@ class ViewRequestFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var bookingRequestsList: MutableList<BookingRequest>
     private lateinit var adapter: BookingRequestsAdapter
+    private lateinit var profileTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +30,7 @@ class ViewRequestFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_view_request, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
+        profileTextView = view.findViewById(R.id.profileTextView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         bookingRequestsList = mutableListOf()
         databaseRef = FirebaseDatabase.getInstance().reference.child("bookingRequests")
@@ -38,6 +41,10 @@ class ViewRequestFragment : Fragment() {
 
         fetchBookingRequests()
 
+        profileTextView.setOnClickListener {
+            loadFragment(TeacherProfileFragment())
+        }
+
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,6 +53,13 @@ class ViewRequestFragment : Fragment() {
         val mainActivity = requireActivity() as MainActivity
         mainActivity.showBottomNavigation(true)
 
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     private fun updateAdapter() {

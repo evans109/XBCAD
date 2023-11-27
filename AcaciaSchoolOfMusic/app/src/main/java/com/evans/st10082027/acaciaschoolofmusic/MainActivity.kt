@@ -35,13 +35,32 @@ class MainActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
+        val currentUser = Firebase.auth.currentUser
+        if (currentUser != null) {
+            val userId = currentUser.uid
+            val userRef = Firebase.database.reference.child("teachers").child(userId)
+            userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        loadFragment(teacher)
+                    } else {
+                        loadFragment(userFrag)
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Toast.makeText(this@MainActivity, "Failed to retrieve user information", Toast.LENGTH_SHORT).show()
+                }
+            })
+        } else {
+            loadFragment(login)
+        }
+
         supportFragmentManager.addFragmentOnAttachListener { fragmentManager, fragment ->
             if (fragment is LoginFragment) {
                 fragment.loginListener = this
             }
         }
-
-        loadFragment(login)
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {

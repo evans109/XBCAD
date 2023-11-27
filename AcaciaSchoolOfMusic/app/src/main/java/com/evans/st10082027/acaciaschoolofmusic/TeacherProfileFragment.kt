@@ -16,7 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
-class ProfileFragment : Fragment() {
+class TeacherProfileFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseRef: DatabaseReference
@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_teacher_profile, container, false)
 
         profileImageView = view.findViewById(R.id.imageViewProfile)
         textViewFirstName = view.findViewById(R.id.textViewFirstName)
@@ -39,7 +39,7 @@ class ProfileFragment : Fragment() {
         buttonLogout = view.findViewById(R.id.buttonLogout)
 
         auth = Firebase.auth
-        databaseRef = FirebaseDatabase.getInstance().reference.child("users")
+        databaseRef = FirebaseDatabase.getInstance().reference.child("teachers")
 
         val currentUser = auth.currentUser
         currentUser?.let { user ->
@@ -48,7 +48,7 @@ class ProfileFragment : Fragment() {
             userRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val firstName = snapshot.child("firstName").value.toString()
-                    val imageUrl = snapshot.child("imageUrl").value.toString()
+                    val imageUrl = snapshot.child("profilePictureUrl").value.toString()
                     Glide.with(requireContext())
                         .load(imageUrl)
                         .placeholder(R.drawable.baseline_person_24)
@@ -59,7 +59,7 @@ class ProfileFragment : Fragment() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Log.e("ProfileFragment", "Database error: ${error.message}")
+                    Log.e("TeacherProfileFragment", "Database error: ${error.message}")
                 }
             })
         }

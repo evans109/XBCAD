@@ -16,7 +16,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/guitar_1"
+            android:src="@drawable/guitar_2"
             android:scaleType="fitCenter"/>
 
         <ImageButton
@@ -89,11 +89,22 @@
         android:textSize="16sp"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressTextView"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        android:text="@string/price"
+        android:visibility="gone"/>
+
     <Button
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addressTextView"
+        android:layout_below="@id/priceTextView"
         android:layout_centerHorizontal="true"
         android:text="@string/send_request"
         android:visibility="gone" />

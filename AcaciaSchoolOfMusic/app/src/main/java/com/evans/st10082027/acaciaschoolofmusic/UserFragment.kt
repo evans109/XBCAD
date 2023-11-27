@@ -31,6 +31,7 @@ class UserFragment : Fragment() {
     var address = ""
     var days = ""
     var times = ""
+    var price = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,12 +79,18 @@ class UserFragment : Fragment() {
         addressButton.setOnClickListener {
             addressTextView.visibility = View.VISIBLE
             binding.submitButton.visibility = View.VISIBLE
+            price = "R120 p/40 minutes"
+            binding.priceTextView.text = price
+            binding.priceTextView.visibility = View.VISIBLE
         }
 
         placeButton.setOnClickListener {
             addressTextView.visibility = View.GONE
             binding.submitButton.visibility = View.VISIBLE
             address = "Acacia Location"
+            price = "R80 p/40 minutes"
+            binding.priceTextView.text = price
+            binding.priceTextView.visibility = View.VISIBLE
         }
 
         binding.submitButton.setOnClickListener {
